@@ -1,7 +1,7 @@
 import './MyLabel.css';
 
 
-interface Props {
+export interface Props {
   /**
    * Text to display
    */
@@ -22,6 +22,10 @@ interface Props {
    * font color
    */
   fontColor?: string;
+  /**
+   * background color
+   */
+  backgroundColor?: string;
 }
 
 /** 
@@ -30,9 +34,20 @@ interface Props {
 * fontColor: string, texto del span
 */
 
-export const MyLabel = ({label, size = 'h3', AllCaps = false, color='text-tertiary', fontColor='#ddd'}: Props) => {
+export const MyLabel = ({
+  label,
+  size = 'h3',
+  AllCaps = false,
+  color = 'text-tertiary',
+  fontColor = '#ddd',
+  backgroundColor = 'transparent'
+}: Props) => {
   return (
-    <span className={`${size} ${color}`}
-    style={{color: fontColor}}>{!AllCaps ? label.toUpperCase() : label}</span>
-  )
+    <span
+      className={`${size} ${color}`}
+      style={{ color: fontColor, backgroundColor }}
+    >
+      {!AllCaps ? label.toUpperCase() : label}
+    </span>
+  );
 }

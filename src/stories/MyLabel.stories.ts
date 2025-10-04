@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { MyLabel } from "../components/MyLabel";
-
-const meta = {
+import { MyLabel, type Props } from "../components/MyLabel";
+const meta: Meta<Props> = {
     title: 'UI/labels/MyLabel',
     component: MyLabel,
     tags: ['autodocs'],
@@ -40,6 +39,13 @@ export const Secondary: Story = {
 };
 
 export const CustomColor: Story = {
+    args: {
+        label: 'Custom Color Label',
+        fontColor: "#e81c01",
+    }
+};
+
+export const CustomBackgroundColor: Story = {
     args: {
         label: 'Custom Color Label',
         fontColor: "#e81c01",
